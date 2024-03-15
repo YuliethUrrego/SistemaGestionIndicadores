@@ -14,21 +14,10 @@ namespace SistemaGestionIndicadores.Controllers
         SqlConnection objSqlConnection;
 
         // Constructor por defecto
-        //public Connection_Controller()
-        //{
-        //    cadenaConexion = null;
-        //    objSqlConnection = null;
-        //}
-
-        // Constructor con un parámetro para especificar la base de datos a la que conectarse
-        // En este caso se deja especificado la BD BDGestionIndicadores.mdf
         public ConnectionController()
         {
             // Se construye la cadena de conexión utilizando la base de datos especificada
-            this.cadenaConexion = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\" + "BDGestionIndicadores.mdf" + ";Integrated Security = True";
-
-            // Se crea una nueva instancia de SqlConnection utilizando la cadena de conexión
-            //objSqlConnection = new SqlConnection(cadenaConexion);
+            this.cadenaConexion = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BDGestionIndicadores.mdf;Integrated Security = True";
         }
 
         // Método para abrir la conexión a la base de datos
@@ -68,9 +57,8 @@ namespace SistemaGestionIndicadores.Controllers
         }
 
         // Método para ejecutar un comando SQL en la base de datos insert into, update, delete
-        public String ExecuteCommand(String comandoSql)
+        public String ExecuteCommand(String comandoSql, SqlParameter[] parametros = null)
         {
-            
             String msg = "ok";
             try
             {
@@ -79,6 +67,13 @@ namespace SistemaGestionIndicadores.Controllers
 
                 // Se crea un nuevo SqlCommand utilizando el comando SQL y la conexión a la base de datos
                 SqlCommand sqlComando = new SqlCommand(comandoSql, objSqlConnection);
+
+                // Si hay parámetros, los añadimos al comando SQL
+                if (parametros != null)
+                {
+                    sqlComando.Parameters.AddRange(parametros);
+                }
+
                 // Se ejecuta el comando SQL en la base de datos
                 sqlComando.ExecuteNonQuery();
             }
@@ -97,9 +92,8 @@ namespace SistemaGestionIndicadores.Controllers
         }
 
         // Método para ejecutar una consulta SQL en la base de datos y devolver un DataSet select * from....
-        public DataSet ExecuteSelect(String comandoSql)
+        public DataSet ExecuteSelect(String comandoSql, SqlParameter[] parametros = null)
         {
-            
             String msg = "ok";
             DataSet objDataSet = new DataSet();
 
@@ -108,8 +102,18 @@ namespace SistemaGestionIndicadores.Controllers
                 // Open DataBase
                 Open();
 
-                // Se crea un nuevo SqlDataAdapter utilizando la consulta SQL y la conexión a la base de datos
-                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(comandoSql, objSqlConnection);
+                // Se crea un nuevo SqlCommand utilizando el comando SQL y la conexión a la base de datos
+                SqlCommand sqlComando = new SqlCommand(comandoSql, objSqlConnection);
+
+                // Si hay parámetros, los añadimos al comando SQL
+                if (parametros != null)
+                {
+                    sqlComando.Parameters.AddRange(parametros);
+                }
+
+                // Se crea un nuevo SqlDataAdapter utilizando el SqlCommand y la conexión a la base de datos
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlComando);
+
                 // Se llena el DataSet con los resultados de la consulta SQL
                 sqlDataAdap.Fill(objDataSet);
             }
@@ -127,5 +131,4 @@ namespace SistemaGestionIndicadores.Controllers
             return objDataSet;
         }
     }
-
 }

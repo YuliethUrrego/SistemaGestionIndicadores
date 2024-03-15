@@ -18,11 +18,11 @@ namespace SistemaGestionIndicadores
 
         protected void Ingresar_Click(object sender, EventArgs e)
         {
-            string email = "yulieth320rpo@gmail.com";
+            string email = "monicaFuentes123@gmail.com";
             string contrasena = "123";
             Usuario objUsuario = new Usuario(email, contrasena);
             UsuarioController objUsuarioController = new UsuarioController(objUsuario);
-            objUsuarioController.create();
+            objUsuarioController.Create();
 
 
         }

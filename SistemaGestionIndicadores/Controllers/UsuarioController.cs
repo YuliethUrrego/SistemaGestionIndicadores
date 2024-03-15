@@ -1,6 +1,7 @@
 ﻿using SistemaGestionIndicadores.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -20,27 +21,53 @@ namespace SistemaGestionIndicadores.Controllers
             this.objUsuario = null;
         }
 
-        public void create()
+        public void Create()
         {
-            string email = this.objUsuario.Email;
-            string contrasena = this.objUsuario.Contrasena;
-            string sql = "insert into usuario values('" + email + "','" + contrasena + "')";
+            string sql = "INSERT INTO usuario VALUES('" + objUsuario.Email + "','" + objUsuario.Contrasena + "')";
             ConnectionController objConnection = new ConnectionController();
-            objConnection.executeCommand(sql);
+            objConnection.ExecuteCommand(sql);
         }
-        public void read()
+        public void List()
         {
-
+            int n = 0;
+            int i = 0;
+            Usuario[] arrayUsuario = null;
+            string sql = "SELECT * FROM usuario";
+            ConnectionController objConnection = new ConnectionController();
+            DataSet objDataset = objConnection.ExecuteSelect(sql);
+            n = objDataset.Tables[0].Rows.Count;
+            arrayUsuario = new Usuario[n];
+            while (i < n)
+            {
+                Usuario objUsuario = new Usuario();
+                objUsuario.Email = objDataset.Tables[0].Rows[i]["email"].ToString();
+                objUsuario.Contrasena = objDataset.Tables[0].Rows[i]["contrasena"].ToString();
+                arrayUsuario[i] = objUsuario;
+                i++;
+            }
         }
 
-        public void update()
+        public void Update()
         {
-
+            string sql = "UPDATE usuario SET contrasena='" + objUsuario.Contrasena + "' WHERE email='" + objUsuario.Email + "'";
+            ConnectionController objConnection = new ConnectionController();
+            objConnection.ExecuteCommand(sql);
         }
 
-        public void delete()
+        public void Delete()
         {
+            string sql = "DELETE FROM usuario WHERE email='" + objUsuario.Email + "'";
+            ConnectionController objConnection = new ConnectionController();
+            objConnection.ExecuteCommand(sql);
+        }
 
+        public Usuario Search()
+        {
+            string sql = "SELECT * FROM usuario WHERE email='" + objUsuario.Email + "'";
+            ConnectionController objConnection = new ConnectionController();
+            DataSet objDataset = objConnection.ExecuteSelect(sql);
+            objUsuario.Contrasena = objDataset.Tables[0].Rows[0]["contrasena"].ToString();
+            return objUsuario;
         }
 
     }

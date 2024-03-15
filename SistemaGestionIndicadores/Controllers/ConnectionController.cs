@@ -32,7 +32,7 @@ namespace SistemaGestionIndicadores.Controllers
         }
 
         // Método para abrir la conexión a la base de datos
-        public String open()
+        public String Open()
         {
             String msg = "ok";
             try
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores.Controllers
         }
 
         // Método para cerrar la conexión a la base de datos
-        public String close()
+        public String Close()
         {
             String msg = "ok";
             try
@@ -68,14 +68,14 @@ namespace SistemaGestionIndicadores.Controllers
         }
 
         // Método para ejecutar un comando SQL en la base de datos insert into, update, delete
-        public String executeCommand(String comandoSql)
+        public String ExecuteCommand(String comandoSql)
         {
             
             String msg = "ok";
             try
             {
                 // Open DataBase
-                open();
+                Open();
 
                 // Se crea un nuevo SqlCommand utilizando el comando SQL y la conexión a la base de datos
                 SqlCommand sqlComando = new SqlCommand(comandoSql, objSqlConnection);
@@ -90,14 +90,14 @@ namespace SistemaGestionIndicadores.Controllers
             finally
             {
                 //Close DataBase
-                close();
+                Close();
             }
 
             return msg;
         }
 
         // Método para ejecutar una consulta SQL en la base de datos y devolver un DataSet select * from....
-        public DataSet executeSelect(String comandoSql)
+        public DataSet ExecuteSelect(String comandoSql)
         {
             
             String msg = "ok";
@@ -105,6 +105,9 @@ namespace SistemaGestionIndicadores.Controllers
 
             try
             {
+                // Open DataBase
+                Open();
+
                 // Se crea un nuevo SqlDataAdapter utilizando la consulta SQL y la conexión a la base de datos
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(comandoSql, objSqlConnection);
                 // Se llena el DataSet con los resultados de la consulta SQL
@@ -114,6 +117,11 @@ namespace SistemaGestionIndicadores.Controllers
             {
                 // Si ocurre un error, se captura el mensaje de excepción
                 msg = Exc.Message;
+            }
+            finally
+            {
+                //Close DataBase
+                Close();
             }
 
             return objDataSet;

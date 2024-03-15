@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\",
+  "WorkspaceRootPath": "D:\\Repositorios\\SistemaGestionIndicadores\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|c:\\users\\usuario\\source\\repos\\sistemagestionindicadores\\sistemagestionindicadores\\usuario_view.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|d:\\repositorios\\sistemagestionindicadores\\sistemagestionindicadores\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|solutionrelative:sistemagestionindicadores\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|d:\\repositorios\\sistemagestionindicadores\\sistemagestionindicadores\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|solutionrelative:sistemagestionindicadores\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|d:\\repositorios\\sistemagestionindicadores\\sistemagestionindicadores\\usuario_view.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|solutionrelative:sistemagestionindicadores\\usuario_view.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|c:\\users\\usuario\\source\\repos\\sistemagestionindicadores\\sistemagestionindicadores\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|D:\\Repositorios\\SistemaGestionIndicadores\\sistemagestionindicadores\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|solutionrelative:sistemagestionindicadores\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|c:\\users\\usuario\\source\\repos\\sistemagestionindicadores\\sistemagestionindicadores\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|D:\\Repositorios\\SistemaGestionIndicadores\\sistemagestionindicadores\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|solutionrelative:sistemagestionindicadores\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|c:\\users\\usuario\\source\\repos\\sistemagestionindicadores\\sistemagestionindicadores\\usuario_view.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|D:\\Repositorios\\SistemaGestionIndicadores\\sistemagestionindicadores\\usuario_view.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{BEEF420C-291C-4FCE-8540-4BED859B58A8}|SistemaGestionIndicadores\\SistemaGestionIndicadores.csproj|solutionrelative:sistemagestionindicadores\\usuario_view.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -26,15 +34,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaGestionIndicadores\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "SistemaGestionIndicadores\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T14:48:25.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SistemaGestionIndicadores\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SistemaGestionIndicadores\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAANMAAAAAAAAAAAAcwNkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T14:36:37.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Usuario_View.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx.cs",
+              "DocumentMoniker": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx.cs",
               "RelativeDocumentMoniker": "SistemaGestionIndicadores\\Usuario_View.aspx.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx.cs",
+              "ToolTip": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx.cs",
               "RelativeToolTip": "SistemaGestionIndicadores\\Usuario_View.aspx.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -43,42 +89,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Usuario_View.aspx",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx",
+              "DocumentMoniker": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx",
               "RelativeDocumentMoniker": "SistemaGestionIndicadores\\Usuario_View.aspx",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx",
+              "ToolTip": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Usuario_View.aspx",
               "RelativeToolTip": "SistemaGestionIndicadores\\Usuario_View.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-11T03:55:01.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T03:55:01.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Controllers\\UsuarioController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "SistemaGestionIndicadores\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Controllers\\UsuarioController.cs",
+              "ToolTip": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "SistemaGestionIndicadores\\Controllers\\UsuarioController.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAcwB4AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T03:17:21.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T03:17:21.12Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Models\\Usuario.cs",
+              "DocumentMoniker": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "SistemaGestionIndicadores\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Models\\Usuario.cs",
+              "ToolTip": "D:\\Repositorios\\SistemaGestionIndicadores\\SistemaGestionIndicadores\\Models\\Usuario.cs",
               "RelativeToolTip": "SistemaGestionIndicadores\\Models\\Usuario.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T03:10:35.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T03:10:35.132Z"
             }
           ]
         }

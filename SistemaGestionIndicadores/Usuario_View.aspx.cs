@@ -24,20 +24,29 @@ namespace SistemaGestionIndicadores
             string email = txtEmail.Text;
             string contrasena = txtContrasena.Text;
             Usuario objUsuario = new Usuario(email, contrasena);
-            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
-            objUsuarioController.Create();
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            objControlUsuario.Create();
             Response.Redirect("Usuario_View.aspx");
         }
 
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            Usuario objUsuario = new Usuario(email, "");
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            //txtContrasena.Text = objControlUsuario.consultar().Email;
+            objUsuario = objControlUsuario.Search();
+            txtContrasena.Text = objUsuario.Contrasena;
 
+        }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
             string contrasena = txtContrasena.Text;
             Usuario objUsuario = new Usuario(email, contrasena);
-            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
-            objUsuarioController.Update();
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            objControlUsuario.Update();
             Response.Redirect("Usuario_View.aspx");
         }
 
@@ -45,13 +54,14 @@ namespace SistemaGestionIndicadores
         {
             string email = txtEmail.Text;
             Usuario objUsuario = new Usuario(email, "");
-            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
-            objUsuarioController.Delete();
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            objControlUsuario.Delete();
             Response.Redirect("Usuario_View.aspx");
         }
+    
 
 
-        protected void Ingresar_Click(object sender, EventArgs e)
+    protected void Ingresar_Click(object sender, EventArgs e)
         {
 
 

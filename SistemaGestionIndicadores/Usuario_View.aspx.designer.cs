@@ -24,15 +24,6 @@ namespace SistemaGestionIndicadores
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Ingresar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Ingresar;
-
-        /// <summary>
         /// Control txtEmail.
         /// </summary>
         /// <remarks>
@@ -60,22 +51,13 @@ namespace SistemaGestionIndicadores
         protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control btnConsultar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// Control TextBox2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Button btnConsultar;
 
         /// <summary>
         /// Control btnModificar.
@@ -87,12 +69,12 @@ namespace SistemaGestionIndicadores
         protected global::System.Web.UI.WebControls.Button btnModificar;
 
         /// <summary>
-        /// Control btnEliminar.
+        /// Control btnBorrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.Button btnBorrar;
     }
 }

@@ -19,10 +19,35 @@ namespace SistemaGestionIndicadores
             arrayUsuario = objUsuarioController.List();
 
         }
-        protected void btnGuardar_Click(object sender, EventArgs e){
-            string email=txtEmail.Text;
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            string contrasena = txtContrasena.Text;
+            Usuario objUsuario = new Usuario(email, contrasena);
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            objControlUsuario.Create();
+            Response.Redirect("FrmUsuario.aspx");
+        }
 
 
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            string contrasena = txtContrasena.Text;
+            Usuario objUsuario = new Usuario(email, contrasena);
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            objControlUsuario.Update();
+            Response.Redirect("FrmUsuario.aspx");
+        }
+
+        protected void btnBorrar_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            Usuario objUsuario = new Usuario(email, "");
+            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
+            objControlUsuario.Delete();
+            Response.Redirect("FrmUsuario.aspx");
         }
 
 

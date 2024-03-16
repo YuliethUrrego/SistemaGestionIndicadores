@@ -296,6 +296,7 @@
 							</th>
 							<th>ID</th>
 							<th>Nombre</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -311,6 +312,7 @@
 							</td>
 							<td><%Response.Write(item.Id);%></td>
 							<td><%Response.Write(item.Descripcion);%></td>
+							<td></td>
 						</tr>	
 						<%}%>
 					</tbody>

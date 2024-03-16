@@ -1,21 +1,23 @@
 ﻿using SistemaGestionIndicadores.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Web;
 
 namespace SistemaGestionIndicadores.Controllers
 {
-    public class TipoIndicadorController
+    public class SentidoController
     {
-        TipoIndicador objTipoIndicador;
+        Sentido objSentido;
 
-        public TipoIndicadorController(TipoIndicador objTipoIndicador)
+        public SentidoController(Sentido objSentido)
         {
-            this.objTipoIndicador = objTipoIndicador;
+            this.objSentido = objSentido;
         }
 
-        public TipoIndicadorController()
+        public SentidoController()
         {
         }
 
@@ -23,10 +25,10 @@ namespace SistemaGestionIndicadores.Controllers
         {
             try
             {
-                string sql = "INSERT INTO tipoindicador (nombre) VALUES (@Nombre)";
+                string sql = "INSERT INTO sentido (nombre) VALUES (@Nombre)";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Nombre", objTipoIndicador.Nombre)
+                    new SqlParameter("@Nombre", objSentido.Nombre)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -34,47 +36,47 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al crear el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al crear el sentido: " + ex.Message);
             }
         }
 
-        public List<TipoIndicador> List()
+        public List<Sentido> List()
         {
-            List<TipoIndicador> tiposIndicador = new List<TipoIndicador>();
+            List<Sentido> sentidos = new List<Sentido>();
             try
             {
-                string sql = "SELECT * FROM tipoindicador";
+                string sql = "SELECT * FROM sentido";
 
                 ConnectionController objConnection = new ConnectionController();
                 DataSet objDataset = objConnection.ExecuteSelect(sql);
 
                 foreach (DataRow row in objDataset.Tables[0].Rows)
                 {
-                    TipoIndicador tipoIndicador = new TipoIndicador
+                    Sentido sentido = new Sentido
                     {
                         Id = Convert.ToInt32(row["id"]),
                         Nombre = row["nombre"].ToString()
                     };
-                    tiposIndicador.Add(tipoIndicador);
+                    sentidos.Add(sentido);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al listar los tipos de indicador: " + ex.Message);
+                Console.WriteLine("Error al listar los sentidos: " + ex.Message);
             }
 
-            return tiposIndicador;
+            return sentidos;
         }
 
         public void Update()
         {
             try
             {
-                string sql = "UPDATE tipoindicador SET nombre = @Nombre WHERE id = @Id";
+                string sql = "UPDATE sentido SET nombre = @Nombre WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id),
-                    new SqlParameter("@Nombre", objTipoIndicador.Nombre)
+                    new SqlParameter("@Id", objSentido.Id),
+                    new SqlParameter("@Nombre", objSentido.Nombre)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -82,7 +84,7 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al actualizar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al actualizar el sentido: " + ex.Message);
             }
         }
 
@@ -90,10 +92,10 @@ namespace SistemaGestionIndicadores.Controllers
         {
             try
             {
-                string sql = "DELETE FROM tipoindicador WHERE id = @Id";
+                string sql = "DELETE FROM sentido WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id)
+                    new SqlParameter("@Id", objSentido.Id)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -101,19 +103,19 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al eliminar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al eliminar el sentido: " + ex.Message);
             }
         }
 
-        public TipoIndicador Search()
+        public Sentido Search()
         {
-            TipoIndicador tipoIndicador = null;
+            Sentido sentido = null;
             try
             {
-                string sql = "SELECT * FROM tipoindicador WHERE id = @Id";
+                string sql = "SELECT * FROM sentido WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id)
+                    new SqlParameter("@Id", objSentido.Id)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -122,7 +124,7 @@ namespace SistemaGestionIndicadores.Controllers
                 if (objDataset.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = objDataset.Tables[0].Rows[0];
-                    tipoIndicador = new TipoIndicador
+                    sentido = new Sentido
                     {
                         Id = Convert.ToInt32(row["id"]),
                         Nombre = row["nombre"].ToString()
@@ -131,10 +133,10 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al buscar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al buscar el sentido: " + ex.Message);
             }
 
-            return tipoIndicador;
+            return sentido;
         }
     }
 }

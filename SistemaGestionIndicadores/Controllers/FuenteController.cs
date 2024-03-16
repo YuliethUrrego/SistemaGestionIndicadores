@@ -1,21 +1,23 @@
 ﻿using SistemaGestionIndicadores.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Web;
 
 namespace SistemaGestionIndicadores.Controllers
 {
-    public class TipoIndicadorController
+    public class FuenteController
     {
-        TipoIndicador objTipoIndicador;
+        Fuente objFuente;
 
-        public TipoIndicadorController(TipoIndicador objTipoIndicador)
+        public FuenteController(Fuente objFuente)
         {
-            this.objTipoIndicador = objTipoIndicador;
+            this.objFuente = objFuente;
         }
 
-        public TipoIndicadorController()
+        public FuenteController()
         {
         }
 
@@ -23,10 +25,10 @@ namespace SistemaGestionIndicadores.Controllers
         {
             try
             {
-                string sql = "INSERT INTO tipoindicador (nombre) VALUES (@Nombre)";
+                string sql = "INSERT INTO fuente (nombre) VALUES (@Nombre)";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Nombre", objTipoIndicador.Nombre)
+                    new SqlParameter("@Nombre", objFuente.Nombre)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -34,47 +36,48 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al crear el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al crear la fuente: " + ex.Message);
             }
         }
 
-        public List<TipoIndicador> List()
+        public List<Fuente> List()
         {
-            List<TipoIndicador> tiposIndicador = new List<TipoIndicador>();
+            List<Fuente> fuentes = new List<Fuente>();
+
             try
             {
-                string sql = "SELECT * FROM tipoindicador";
+                string sql = "SELECT * FROM fuente";
 
                 ConnectionController objConnection = new ConnectionController();
                 DataSet objDataset = objConnection.ExecuteSelect(sql);
 
                 foreach (DataRow row in objDataset.Tables[0].Rows)
                 {
-                    TipoIndicador tipoIndicador = new TipoIndicador
+                    Fuente fuente = new Fuente
                     {
                         Id = Convert.ToInt32(row["id"]),
                         Nombre = row["nombre"].ToString()
                     };
-                    tiposIndicador.Add(tipoIndicador);
+                    fuentes.Add(fuente);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al listar los tipos de indicador: " + ex.Message);
+                Console.WriteLine("Error al listar las fuentes: " + ex.Message);
             }
 
-            return tiposIndicador;
+            return fuentes;
         }
 
         public void Update()
         {
             try
             {
-                string sql = "UPDATE tipoindicador SET nombre = @Nombre WHERE id = @Id";
+                string sql = "UPDATE fuente SET nombre = @Nombre WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id),
-                    new SqlParameter("@Nombre", objTipoIndicador.Nombre)
+                    new SqlParameter("@Id", objFuente.Id),
+                    new SqlParameter("@Nombre", objFuente.Nombre)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -82,7 +85,7 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al actualizar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al actualizar la fuente: " + ex.Message);
             }
         }
 
@@ -90,10 +93,10 @@ namespace SistemaGestionIndicadores.Controllers
         {
             try
             {
-                string sql = "DELETE FROM tipoindicador WHERE id = @Id";
+                string sql = "DELETE FROM fuente WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id)
+                    new SqlParameter("@Id", objFuente.Id)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -101,19 +104,19 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al eliminar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al eliminar la fuente: " + ex.Message);
             }
         }
 
-        public TipoIndicador Search()
+        public Fuente Search()
         {
-            TipoIndicador tipoIndicador = null;
+            Fuente fuente = null;
             try
             {
-                string sql = "SELECT * FROM tipoindicador WHERE id = @Id";
+                string sql = "SELECT * FROM fuente WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id)
+                    new SqlParameter("@Id", objFuente.Id)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -122,7 +125,7 @@ namespace SistemaGestionIndicadores.Controllers
                 if (objDataset.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = objDataset.Tables[0].Rows[0];
-                    tipoIndicador = new TipoIndicador
+                    fuente = new Fuente
                     {
                         Id = Convert.ToInt32(row["id"]),
                         Nombre = row["nombre"].ToString()
@@ -131,10 +134,10 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al buscar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al buscar la fuente: " + ex.Message);
             }
 
-            return tipoIndicador;
+            return fuente;
         }
     }
 }

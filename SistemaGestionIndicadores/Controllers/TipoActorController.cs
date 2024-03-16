@@ -1,21 +1,23 @@
 ﻿using SistemaGestionIndicadores.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Web;
 
 namespace SistemaGestionIndicadores.Controllers
 {
-    public class TipoIndicadorController
+    public class TipoActorController
     {
-        TipoIndicador objTipoIndicador;
+        TipoActor objTipoActor;
 
-        public TipoIndicadorController(TipoIndicador objTipoIndicador)
+        public TipoActorController(TipoActor objTipoActor)
         {
-            this.objTipoIndicador = objTipoIndicador;
+            this.objTipoActor = objTipoActor;
         }
 
-        public TipoIndicadorController()
+        public TipoActorController()
         {
         }
 
@@ -23,10 +25,10 @@ namespace SistemaGestionIndicadores.Controllers
         {
             try
             {
-                string sql = "INSERT INTO tipoindicador (nombre) VALUES (@Nombre)";
+                string sql = "INSERT INTO tipoactor (nombre) VALUES (@Nombre)";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Nombre", objTipoIndicador.Nombre)
+                    new SqlParameter("@Nombre", objTipoActor.Nombre)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -34,47 +36,47 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al crear el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al crear el tipo de actor: " + ex.Message);
             }
         }
 
-        public List<TipoIndicador> List()
+        public List<TipoActor> List()
         {
-            List<TipoIndicador> tiposIndicador = new List<TipoIndicador>();
+            List<TipoActor> tiposActores = new List<TipoActor>();
             try
             {
-                string sql = "SELECT * FROM tipoindicador";
+                string sql = "SELECT * FROM tipoactor";
 
                 ConnectionController objConnection = new ConnectionController();
                 DataSet objDataset = objConnection.ExecuteSelect(sql);
 
                 foreach (DataRow row in objDataset.Tables[0].Rows)
                 {
-                    TipoIndicador tipoIndicador = new TipoIndicador
+                    TipoActor tipoActor = new TipoActor
                     {
                         Id = Convert.ToInt32(row["id"]),
                         Nombre = row["nombre"].ToString()
                     };
-                    tiposIndicador.Add(tipoIndicador);
+                    tiposActores.Add(tipoActor);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al listar los tipos de indicador: " + ex.Message);
+                Console.WriteLine("Error al listar los tipos de actor: " + ex.Message);
             }
 
-            return tiposIndicador;
+            return tiposActores;
         }
 
         public void Update()
         {
             try
             {
-                string sql = "UPDATE tipoindicador SET nombre = @Nombre WHERE id = @Id";
+                string sql = "UPDATE tipoactor SET nombre = @Nombre WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id),
-                    new SqlParameter("@Nombre", objTipoIndicador.Nombre)
+                    new SqlParameter("@Id", objTipoActor.Id),
+                    new SqlParameter("@Nombre", objTipoActor.Nombre)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -82,7 +84,7 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al actualizar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al actualizar el tipo de actor: " + ex.Message);
             }
         }
 
@@ -90,10 +92,10 @@ namespace SistemaGestionIndicadores.Controllers
         {
             try
             {
-                string sql = "DELETE FROM tipoindicador WHERE id = @Id";
+                string sql = "DELETE FROM tipoactor WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id)
+                    new SqlParameter("@Id", objTipoActor.Id)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -101,19 +103,19 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al eliminar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al eliminar el tipo de actor: " + ex.Message);
             }
         }
 
-        public TipoIndicador Search()
+        public TipoActor Search()
         {
-            TipoIndicador tipoIndicador = null;
+            TipoActor tipoActor = null;
             try
             {
-                string sql = "SELECT * FROM tipoindicador WHERE id = @Id";
+                string sql = "SELECT * FROM tipoactor WHERE id = @Id";
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    new SqlParameter("@Id", objTipoIndicador.Id)
+                    new SqlParameter("@Id", objTipoActor.Id)
                 };
 
                 ConnectionController objConnection = new ConnectionController();
@@ -122,7 +124,7 @@ namespace SistemaGestionIndicadores.Controllers
                 if (objDataset.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = objDataset.Tables[0].Rows[0];
-                    tipoIndicador = new TipoIndicador
+                    tipoActor = new TipoActor
                     {
                         Id = Convert.ToInt32(row["id"]),
                         Nombre = row["nombre"].ToString()
@@ -131,10 +133,10 @@ namespace SistemaGestionIndicadores.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al buscar el tipo de indicador: " + ex.Message);
+                Console.WriteLine("Error al buscar el tipo de actor: " + ex.Message);
             }
 
-            return tipoIndicador;
+            return tipoActor;
         }
     }
 }

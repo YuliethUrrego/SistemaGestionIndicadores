@@ -1,11 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sentido_View.aspx.cs" Inherits="SistemaGestionIndicadores.Sentido_View" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UnidadMedicion_View.aspx.cs" Inherits="SistemaGestionIndicadores.UnidadMedicion_View" %>
+
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Formulario Sentido</title>
+<title>Formulario Unidad Medicion</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -275,11 +277,11 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Gestion Sentido
+							<h2>Gestion Unidad Medicion
 							</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#crudModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Gestionar Sentido</span></a>
+							<a href="#crudModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Gestionar Unidad Medicion</span></a>
 						</div>
 					</div>
 				</div>
@@ -293,11 +295,11 @@
 								</span>
 							</th>
 							<th>ID</th>
-							<th>Descripcion</th>
+							<th>Nombre</th>
 						</tr>
 					</thead>
 					<tbody>
-						<%foreach(var item in listaSentido)
+						<%foreach(var item in listaUnidadMedicion)
 						{
 %>
 						<tr>
@@ -308,7 +310,7 @@
 								</span>
 							</td>
 							<td><%Response.Write(item.Id);%></td>
-							<td><%Response.Write(item.Nombre);%></td>
+							<td><%Response.Write(item.Descripcion);%></td>
 						</tr>	
 						<%}%>
 					</tbody>
@@ -331,7 +333,7 @@
 								</div>
 								<div class="form-group">
 									<label>Nombre</label>
-                                    <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtDescripcion" runat="server" class="form-control"></asp:TextBox>
 								</div>
 								<div class="form-group">
                                     <asp:Button ID="btnGuardar" class="btn btn-success" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
@@ -346,7 +348,6 @@
 					</div>
 				</div>
 			</div>
-
     </form>
 </body>
 </html>

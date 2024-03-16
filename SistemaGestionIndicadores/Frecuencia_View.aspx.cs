@@ -17,5 +17,41 @@ namespace SistemaGestionIndicadores
             FrecuenciaController objFrecuenciaController = new FrecuenciaController();
             listaFrecuencias = objFrecuenciaController.List();
         }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text;
+            Frecuencia objFrecuencia = new Frecuencia(nombre);
+            FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
+            objFrecuenciaController.Create();
+            Response.Redirect("Frecuencia_View.aspx");
+        }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            Frecuencia objFrecuencia = new Frecuencia(id);
+            FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
+            txtNombre.Text = objFrecuenciaController.Search().Nombre;
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            string nombre = txtNombre.Text;
+            Frecuencia objFrecuencia = new Frecuencia(id, nombre);
+            FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
+            objFrecuenciaController.Update();
+            Response.Redirect("Frecuencia_View.aspx");
+        }
+
+        protected void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            Frecuencia objFrecuencia = new Frecuencia(id);
+            FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
+            objFrecuenciaController.Delete();
+            Response.Redirect("Frecuencia_View.aspx");
+        }
     }
 }

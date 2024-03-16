@@ -193,8 +193,8 @@ CREATE TABLE indicador (
 --
 
 INSERT INTO indicador (codigo, nombre, objetivo, alcance, formula, fkidtipoindicador, fkidunidadmedicion, meta, fkidsentido, fkidfrecuencia, fkidarticulo, fkidliteral, fkidnumeral, fkidparagrafo) VALUES
-('COD 555', 'NPM 555', 'Objetivo Indicador COD 555', 'Alcance Indicador COD 555', '(sin(x)*sin(y))**2', 5, 15, 'Meta Indicador COD 555 modifi', 5, 5, '2.5.3.2.11.5', '0', '0', '0'),
-('COD 111', 'NPM 111', 'Objetivo Indicador COD 111', 'Alcance Indicador COD 111', '(sin(x)*sin(y))**2', 1, 12, 'Meta Indicador COD 111', 3, 1, '2.5.3.2.11.1', '0', '0', '0');
+('COD 555', 'NPM 555', 'Objetivo Indicador COD 555', 'Alcance Indicador COD 555', '(sin(x)*sin(y))**2', 5, 15, 'Meta Indicador COD 555 modifi', 5, 1, '2.5.3.2.11.5', '0', '0', '0'),
+('COD 111', 'NPM 111', 'Objetivo Indicador COD 111', 'Alcance Indicador COD 111', '(sin(x)*sin(y))**2', 1, 12, 'Meta Indicador COD 111', 3, 2, '2.5.3.2.11.1', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -560,6 +560,26 @@ INSERT INTO sentido (nombre) VALUES
 
 -- --------------------------------------------------------
 
+
+--
+-- Estructura de tabla para la tabla frecuencia
+--
+
+CREATE TABLE frecuencia (
+  id int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  nombre varchar(200) NOT NULL
+);
+
+--
+-- Volcado de datos para la tabla frecuencia
+--
+
+INSERT INTO frecuencia (nombre) VALUES
+('Frecuencia 1'),
+('Frecuencia 2');
+
+
+------------------------------------------------------------
 --
 -- Estructura de tabla para la tabla subseccion
 --
@@ -745,6 +765,8 @@ ALTER TABLE indicador
   ADD CONSTRAINT indicador_ibfk_2 FOREIGN KEY (fkidunidadmedicion) REFERENCES unidadmedicion (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE indicador
   ADD CONSTRAINT indicador_ibfk_3 FOREIGN KEY (fkidsentido) REFERENCES sentido (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE indicador
+  ADD CONSTRAINT indicador_ibfk_4 FOREIGN KEY (fkidfrecuencia) REFERENCES frecuencia (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE indicador
   ADD CONSTRAINT indicador_ibfk_5 FOREIGN KEY (fkidarticulo) REFERENCES articulo (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE indicador

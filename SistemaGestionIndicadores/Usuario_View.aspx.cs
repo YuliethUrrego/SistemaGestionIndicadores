@@ -24,9 +24,9 @@ namespace SistemaGestionIndicadores
             string email = txtEmail.Text;
             string contrasena = txtContrasena.Text;
             Usuario objUsuario = new Usuario(email, contrasena);
-            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
-            objControlUsuario.Create();
-            Response.Redirect("FrmUsuario.aspx");
+            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
+            objUsuarioController.Create();
+            Response.Redirect("Usuario_View.aspx");
         }
 
 
@@ -36,18 +36,18 @@ namespace SistemaGestionIndicadores
             string email = txtEmail.Text;
             string contrasena = txtContrasena.Text;
             Usuario objUsuario = new Usuario(email, contrasena);
-            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
-            objControlUsuario.Update();
-            Response.Redirect("FrmUsuario.aspx");
+            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
+            objUsuarioController.Update();
+            Response.Redirect("Usuario_View.aspx");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
             Usuario objUsuario = new Usuario(email, "");
-            UsuarioController objControlUsuario = new UsuarioController(objUsuario);
-            objControlUsuario.Delete();
-            Response.Redirect("FrmUsuario.aspx");
+            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
+            objUsuarioController.Delete();
+            Response.Redirect("Usuario_View.aspx");
         }
 
 

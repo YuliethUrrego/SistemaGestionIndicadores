@@ -10,5 +10,22 @@ namespace SistemaGestionIndicadores.Models
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
+
+        public UnidadMedicion(int id, string descripcion)
+        {
+            Id = id;
+            Descripcion = descripcion;
+        }
+        public UnidadMedicion(int id)
+        {
+            Id = id;
+        }
+        public UnidadMedicion(string descripcion)
+        {
+            Descripcion = descripcion;
+        }
+        public UnidadMedicion()
+        {
+        }
     }
 }

@@ -18,11 +18,26 @@ namespace SistemaGestionIndicadores
 
         protected void Ingresar_Click(object sender, EventArgs e)
         {
-            string email = "monicaFuentes123@gmail.com";
-            string contrasena = "123";
-            Usuario objUsuario = new Usuario(email, contrasena);
-            UsuarioController objUsuarioController = new UsuarioController(objUsuario);
-            objUsuarioController.Create();
+            //string email = "PruebaYu";
+            //string contrasena = "123";
+            //Usuario objUsuario = new Usuario(email, contrasena);
+            //UsuarioController objUsuarioController = new UsuarioController(objUsuario);
+            //objUsuarioController.Create();
+
+            TipoIndicadorController tipoIndicadorController = new TipoIndicadorController(new TipoIndicador(5, "Eficiencia"));
+            //tipoIndicadorController.Create();
+
+            //tipoIndicadorController.Update();
+
+            //tipoIndicadorController.Delete();
+
+            List<TipoIndicador> tiposIndicadores = tipoIndicadorController.List();
+            foreach (TipoIndicador tipoIndicador in tiposIndicadores)
+            {
+                Response.Write($" ID: {tipoIndicador.Id}, Nombre: {tipoIndicador.Nombre}");
+            }
+            TipoIndicador tipoIndicadorSearch = tipoIndicadorController.Search();
+            Response.Write($" busqueda: ID: {tipoIndicadorSearch.Id}, Nombre: {tipoIndicadorSearch.Nombre}");
 
 
         }

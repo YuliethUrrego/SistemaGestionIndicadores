@@ -10,5 +10,24 @@ namespace SistemaGestionIndicadores.Models
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+
+        public RepresenVisual(int id, string nombre)
+        {
+            Id = id;
+            Nombre = nombre;
+        }
+
+        public RepresenVisual(int id)
+        {
+            Id = id;
+        }
+        public RepresenVisual(string nombre)
+        {
+            Nombre = nombre;
+        }
+
+        public RepresenVisual()
+        {
+        }
     }
 }

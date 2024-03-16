@@ -8,12 +8,23 @@ namespace SistemaGestionIndicadores.Controllers
 {
     public class TipoIndicadorController
     {
-        public void Create(TipoIndicador tipoIndicador)
+        TipoIndicador objTipoIndicador;
+
+        public TipoIndicadorController(TipoIndicador objTipoIndicador)
+        {
+            this.objTipoIndicador = objTipoIndicador;
+        }
+
+        public TipoIndicadorController()
+        {
+        }
+
+        public void Create()
         {
             string sql = "INSERT INTO tipoindicador (nombre) VALUES (@Nombre)";
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("@Nombre", tipoIndicador.Nombre)
+                new SqlParameter("@Nombre", objTipoIndicador.Nombre)
             };
 
             ConnectionController objConnection = new ConnectionController();
@@ -41,38 +52,38 @@ namespace SistemaGestionIndicadores.Controllers
             return tiposIndicador;
         }
 
-        public void Update(TipoIndicador tipoIndicador)
+        public void Update()
         {
             string sql = "UPDATE tipoindicador SET nombre = @Nombre WHERE id = @Id";
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("@Id", tipoIndicador.Id),
-                new SqlParameter("@Nombre", tipoIndicador.Nombre)
+                new SqlParameter("@Id", objTipoIndicador.Id),
+                new SqlParameter("@Nombre", objTipoIndicador.Nombre)
             };
 
             ConnectionController objConnection = new ConnectionController();
             objConnection.ExecuteCommand(sql, parametros);
         }
 
-        public void Delete(int id)
+        public void Delete()
         {
             string sql = "DELETE FROM tipoindicador WHERE id = @Id";
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("@Id", id)
+                new SqlParameter("@Id", objTipoIndicador.Id)
             };
 
             ConnectionController objConnection = new ConnectionController();
             objConnection.ExecuteCommand(sql, parametros);
         }
 
-        public TipoIndicador Search(int id)
+        public TipoIndicador Search()
         {
             TipoIndicador tipoIndicador = null;
             string sql = "SELECT * FROM tipoindicador WHERE id = @Id";
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("@Id", id)
+                new SqlParameter("@Id", objTipoIndicador.Id)
             };
 
             ConnectionController objConnection = new ConnectionController();

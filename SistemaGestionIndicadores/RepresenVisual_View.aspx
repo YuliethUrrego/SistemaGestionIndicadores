@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Formulario Sentido</title>
+<title>Representacion visual</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -275,11 +275,11 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Gestion Sentido
+							<h2>Representacion Visual
 							</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#crudModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Gestionar Sentido</span></a>
+							<a href="#crudModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Representación Visual</span></a>
 						</div>
 					</div>
 				</div>
@@ -321,7 +321,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 							<div class="modal-header">						
-								<h4 class="modal-title">Gestión de Usuarios</h4>
+								<h4 class="modal-title">Representación Visual</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">					

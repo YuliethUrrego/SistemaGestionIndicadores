@@ -166,6 +166,20 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Frecuencia_View.aspx.cs">
+      <DependentUpon>Frecuencia_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frecuencia_View.aspx.designer.cs">
+      <DependentUpon>Frecuencia_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fuente_View.aspx.cs">
+      <DependentUpon>Fuente_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fuente_View.aspx.designer.cs">
+      <DependentUpon>Fuente_View.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,6 +192,41 @@
     <Compile Include="Models\UnidadMedicion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepresenVisual_View.aspx.cs">
+      <DependentUpon>RepresenVisual_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepresenVisual_View.aspx.designer.cs">
+      <DependentUpon>RepresenVisual_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sentido_View.aspx.cs">
+      <DependentUpon>Sentido_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sentido_View.aspx.designer.cs">
+      <DependentUpon>Sentido_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TipoActor_View.aspx.cs">
+      <DependentUpon>TipoActor_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoActor_View.aspx.designer.cs">
+      <DependentUpon>TipoActor_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TipoIndicador_View.aspx.cs">
+      <DependentUpon>TipoIndicador_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoIndicador_View.aspx.designer.cs">
+      <DependentUpon>TipoIndicador_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnidadMedicion_View.aspx.cs">
+      <DependentUpon>UnidadMedicion_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnidadMedicion_View.aspx.designer.cs">
+      <DependentUpon>UnidadMedicion_View.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario_View.aspx.cs">
       <DependentUpon>Usuario_View.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,7 +258,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Frecuencia_View.aspx" />
+    <Content Include="Fuente_View.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="RepresenVisual_View.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -241,6 +293,10 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Sentido_View.aspx" />
+    <Content Include="TipoActor_View.aspx" />
+    <Content Include="TipoIndicador_View.aspx" />
+    <Content Include="UnidadMedicion_View.aspx" />
     <Content Include="Usuario_View.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

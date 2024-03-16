@@ -50,7 +50,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Gestion Sentido
+							<h2>Sentido
 							</h2>
 						</div>
 						<div class="col-sm-6">
@@ -68,7 +68,8 @@
 								</span>
 							</th>
 							<th>ID</th>
-							<th>Descripcion</th>
+							<th>Nombre</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -84,6 +85,8 @@
 							</td>
 							<td><%Response.Write(item.Id);%></td>
 							<td><%Response.Write(item.Nombre);%></td>
+							<td></td>
+
 						</tr>	
 						<%}%>
 					</tbody>
@@ -96,7 +99,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 							<div class="modal-header">						
-								<h4 class="modal-title">Gestión de Usuarios</h4>
+								<h4 class="modal-title">Sentido</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">					
@@ -121,7 +124,6 @@
 					</div>
 				</div>
 			</div>
-
     </form>
 </body>
 </html>

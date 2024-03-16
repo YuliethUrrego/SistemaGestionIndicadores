@@ -67,6 +67,7 @@
 										</th>
 										<th>Email</th>
 										<th>Contraseña</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -82,6 +83,7 @@
 										</td>
                                         <td><%Response.Write(arrayUsuario[i].Email); %></td>
 										<td><%Response.Write(arrayUsuario[i].Contrasena); %></td>
+										<td></td>
 									</tr>
 								<%	} %>
 								</tbody>

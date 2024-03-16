@@ -11,18 +11,27 @@ namespace SistemaGestionIndicadores
 {
     public partial class Usuario_Vista : System.Web.UI.Page
     {
+        protected Usuario[] arrayUsuario=null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioController objUsuarioController = new UsuarioController();
+            arrayUsuario = objUsuarioController.List();
+
+        }
+        protected void btnGuardar_Click(object sender, EventArgs e){
+            string email=txtEmail.Text;
+
 
         }
 
+
         protected void Ingresar_Click(object sender, EventArgs e)
         {
-            //string email = "PruebaYu";
-            //string contrasena = "123";
-            //Usuario objUsuario = new Usuario(email, contrasena);
-            //UsuarioController objUsuarioController = new UsuarioController(objUsuario);
-            //objUsuarioController.Create();
+
+
+
+
 
             /*** PRUEBA TIPO INDICADOR***/
             //TipoIndicadorController tipoIndicadorController = new TipoIndicadorController(new TipoIndicador(5, "Eficiencia"));

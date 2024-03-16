@@ -27,7 +27,7 @@ namespace SistemaGestionIndicadores.Controllers
             ConnectionController objConnection = new ConnectionController();
             objConnection.ExecuteCommand(sql);
         }
-        public void List()
+        public Usuario[] List()
         {
             int n = 0;
             int i = 0;
@@ -45,6 +45,7 @@ namespace SistemaGestionIndicadores.Controllers
                 arrayUsuario[i] = objUsuario;
                 i++;
             }
+            return arrayUsuario;
         }
 
         public void Update()

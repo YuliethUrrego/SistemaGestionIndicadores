@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             TipoActor objTipoActor = new TipoActor(nombre);
             TipoActorController objTipoActorController = new TipoActorController(objTipoActor);
             objTipoActorController.Create();
-            Response.Redirect("TipoActor_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             TipoActor objTipoActor = new TipoActor(id, nombre);
             TipoActorController objTipoActorController = new TipoActorController(objTipoActor);
             objTipoActorController.Update();
-            Response.Redirect("TipoActor_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             TipoActor objTipoActor = new TipoActor(id);
             TipoActorController objTipoActorController = new TipoActorController(objTipoActor);
             objTipoActorController.Delete();
-            Response.Redirect("TipoActor_View.aspx");
+            Response.Redirect("/");
         }
     }
 }

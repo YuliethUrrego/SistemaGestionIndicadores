@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             RepresenVisual objRepresenVisual = new RepresenVisual(nombre);
             RepresenVisualController objRepresenVisualController = new RepresenVisualController(objRepresenVisual);
             objRepresenVisualController.Create();
-            Response.Redirect("RepresenVisual_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             RepresenVisual objRepresenVisual = new RepresenVisual(id, nombre);
             RepresenVisualController objRepresenVisualController = new RepresenVisualController(objRepresenVisual);
             objRepresenVisualController.Update();
-            Response.Redirect("RepresenVisual_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             RepresenVisual objRepresenVisual = new RepresenVisual(id);
             RepresenVisualController objRepresenVisualController = new RepresenVisualController(objRepresenVisual);
             objRepresenVisualController.Delete();
-            Response.Redirect("RepresenVisual_View.aspx");
+            Response.Redirect("/");
         }
     }
 }

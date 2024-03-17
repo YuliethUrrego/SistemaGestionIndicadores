@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             Frecuencia objFrecuencia = new Frecuencia(nombre);
             FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
             objFrecuenciaController.Create();
-            Response.Redirect("Frecuencia_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             Frecuencia objFrecuencia = new Frecuencia(id, nombre);
             FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
             objFrecuenciaController.Update();
-            Response.Redirect("Frecuencia_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             Frecuencia objFrecuencia = new Frecuencia(id);
             FrecuenciaController objFrecuenciaController = new FrecuenciaController(objFrecuencia);
             objFrecuenciaController.Delete();
-            Response.Redirect("Frecuencia_View.aspx");
+            Response.Redirect("/");
         }
     }
 }

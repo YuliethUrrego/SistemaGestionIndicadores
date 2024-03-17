@@ -83,7 +83,7 @@
 							</td>
 							<td><%Response.Write(item.Id);%></td>
 							<td><%Response.Write(item.Nombre);%></td
-							<td>></td>
+							<td></td>
 						</tr>	
 						<%}%>
 					</tbody>

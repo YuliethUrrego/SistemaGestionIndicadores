@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             TipoIndicador objTipoIndicador = new TipoIndicador(nombre);
             TipoIndicadorController objTipoIndicadorController = new TipoIndicadorController(objTipoIndicador);
             objTipoIndicadorController.Create();
-            Response.Redirect("TipoIndicador_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             TipoIndicador objTipoIndicador = new TipoIndicador(id, nombre);
             TipoIndicadorController objTipoIndicadorController = new TipoIndicadorController(objTipoIndicador);
             objTipoIndicadorController.Update();
-            Response.Redirect("TipoIndicador_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             TipoIndicador objTipoIndicador = new TipoIndicador(id);
             TipoIndicadorController objTipoIndicadorController = new TipoIndicadorController(objTipoIndicador);
             objTipoIndicadorController.Delete();
-            Response.Redirect("TipoIndicador_View.aspx");
+            Response.Redirect("/");
         }
     }
 }

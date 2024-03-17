@@ -26,7 +26,7 @@ namespace SistemaGestionIndicadores
             Usuario objUsuario = new Usuario(email, contrasena);
             UsuarioController objControlUsuario = new UsuarioController(objUsuario);
             objControlUsuario.Create();
-            Response.Redirect("Usuario_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace SistemaGestionIndicadores
             Usuario objUsuario = new Usuario(email, contrasena);
             UsuarioController objControlUsuario = new UsuarioController(objUsuario);
             objControlUsuario.Update();
-            Response.Redirect("Usuario_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace SistemaGestionIndicadores
             Usuario objUsuario = new Usuario(email, "");
             UsuarioController objControlUsuario = new UsuarioController(objUsuario);
             objControlUsuario.Delete();
-            Response.Redirect("Usuario_View.aspx");
+            Response.Redirect("/");
         }
     
 

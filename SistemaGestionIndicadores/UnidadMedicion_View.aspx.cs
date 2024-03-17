@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             UnidadMedicion objUnidadMedicion = new UnidadMedicion(descripcion);
             UnidadMedicionController objUnidadMedicionController = new UnidadMedicionController(objUnidadMedicion);
             objUnidadMedicionController.Create();
-            Response.Redirect("UnidadMedicion_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             UnidadMedicion objUnidadMedicion = new UnidadMedicion(id, descripcion);
             UnidadMedicionController objUnidadMedicionController = new UnidadMedicionController(objUnidadMedicion);
             objUnidadMedicionController.Update();
-            Response.Redirect("UnidadMedicion_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             UnidadMedicion objUnidadMedicion = new UnidadMedicion(id);
             UnidadMedicionController objUnidadMedicionController = new UnidadMedicionController(objUnidadMedicion);
             objUnidadMedicionController.Delete();
-            Response.Redirect("UnidadMedicion_View.aspx");
+            Response.Redirect("/");
         }
     }
 }

@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             Sentido objSentido = new Sentido(nombre);
             SentidoController objSentidoController = new SentidoController(objSentido);
             objSentidoController.Create();
-            Response.Redirect("Sentido_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             Sentido objSentido = new Sentido(id, nombre);
             SentidoController objSentidoController = new SentidoController(objSentido);
             objSentidoController.Update();
-            Response.Redirect("Sentido_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             Sentido objSentido = new Sentido(id);
             SentidoController objSentidoController = new SentidoController(objSentido);
             objSentidoController.Delete();
-            Response.Redirect("Sentido_View.aspx");
+            Response.Redirect("/");
         }
     }
 }

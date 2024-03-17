@@ -67,6 +67,7 @@
                                     <ul class="nav child_menu">
                                         <li><a href="#" onclick="cargarFrecuencia()">Administrar Frecuencia</a></li>
                                         <li><a href="#" onclick="cargarActores()">Administrar Tipo Actor</a></li>
+                                        <li><a href="#" onclick="cargarIndicador()">Administrar Tipo Indicador</a></li>
                                         <li><a href="#" onclick="cargarFuentes()">Administrar Fuentes</a></li>
                                         <li><a href="#" onclick="cargarRepresenVisual()">Administrar Representacion Visual</a></li>
                                         <li><a href="#" onclick="cargarSentido()">Administrar Sentidos</a></li>
@@ -136,6 +137,7 @@
             <!-- page content -->
             <div class="right_col" role="main" >
                 <div id="usuario-container"></div>
+
                 <div id="contenido-original" style="display: none;">@RenderBody()</div>
             </div>
             <!-- /page content -->
@@ -166,9 +168,22 @@
                 }
             });
         }
+
         function cargarActores() {
             $.ajax({
                 url: '/TipoActor_View.aspx',
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+        function cargarIndicador() {
+            $.ajax({
+                url: '/TipoIndicador_View.aspx',
                 type: 'GET',
                 success: function (data) {
                     $('#usuario-container').html(data);

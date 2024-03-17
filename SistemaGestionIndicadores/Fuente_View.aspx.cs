@@ -24,7 +24,7 @@ namespace SistemaGestionIndicadores
             Fuente objFuente = new Fuente(nombre);
             FuenteController objFuenteController = new FuenteController(objFuente);
             objFuenteController.Create();
-            Response.Redirect("Fuente_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaGestionIndicadores
             Fuente objFuente = new Fuente(id, nombre);
             FuenteController objFuenteController = new FuenteController(objFuente);
             objFuenteController.Update();
-            Response.Redirect("Fuente_View.aspx");
+            Response.Redirect("/");
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SistemaGestionIndicadores
             Fuente objFuente = new Fuente(id);
             FuenteController objFuenteController = new FuenteController(objFuente);
             objFuenteController.Delete();
-            Response.Redirect("Fuente_View.aspx");
+            Response.Redirect("/");
         }
 
     }

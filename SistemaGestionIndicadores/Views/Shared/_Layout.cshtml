@@ -44,7 +44,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="../Content/images/img.jpg" alt="..." class="img-circle profile_img">
+                            <img src="../Content/images/logoym.png" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Bienvenidas,</span>
@@ -63,9 +63,11 @@
                                 <li>
                                     <a><i class="fa fa-home"></i> Opciones <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="../Home/Index.cshtml">Index</a></li>
-                                        <li><a href="../Home/IndexTipoIndicador.cshtml">Tipo Indicador</a></li>
+                                        <li><a href="#" onclick="cargarFrecuencia()">Administrar Frecuencia</a></li>
+                                        <li><a href="#" onclick="cargarUsuarios()">Administrar usuarios</a></li>
+
                                     </ul>
+
                                 </li>
                             </ul>
                         </div>
@@ -118,85 +120,51 @@
                                     <i class="fa fa-envelope-o"></i>
                                     <span class="badge bg-green">6</span>
                                 </a>
-                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <div class="text-center">
-                                            <a class="dropdown-item">
-                                                <strong>See All Alerts</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
+
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
+
             <!-- /top navigation -->
             <!-- page content -->
+            <div class="right_col" role="main">
+                <div id="usuario-container"></div>
+            </div>
+
             <div class="right_col" role="main">
                 @RenderBody()
             </div>
             <!-- /page content -->
-            <!-- footer content -->
-            <footer>
-                <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-                </div>
-                <div class="clearfix"></div>
-            </footer>
-            <!-- /footer content -->
         </div>
     </div>
+    <script>
+        function cargarUsuarios() {
+            $.ajax({
+                url: '/Usuario_View.aspx', // La URL de la vista de usuarios
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data); // Carga la vista en el contenedor
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+        function cargarFrecuencia() {
+            $.ajax({
+                url: '/Frecuencia_View.aspx',
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
 
     <!-- jQuery -->
     <script src="../Content/jquery/dist/jquery.min.js"></script>

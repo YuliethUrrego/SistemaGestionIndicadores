@@ -64,10 +64,9 @@
                                     <a><i class="fa fa-home"></i> Opciones <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="#" onclick="cargarFrecuencia()">Administrar Frecuencia</a></li>
+                                        <li><a href="#" onclick="cargarActores()">Administrar Tipo Actor</a></li> <!-- Nuevo enlace con onclick -->
                                         <li><a href="#" onclick="cargarUsuarios()">Administrar usuarios</a></li>
-
                                     </ul>
-
                                 </li>
                             </ul>
                         </div>
@@ -163,6 +162,19 @@
                     console.error(error);
                 }
             });
+        }
+            function cargarActores() {
+                $.ajax({
+                    url: '/TipoActor_View.aspx',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#usuario-container').html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
         }
     </script>
 

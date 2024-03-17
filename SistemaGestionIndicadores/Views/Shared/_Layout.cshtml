@@ -64,7 +64,11 @@
                                     <a><i class="fa fa-home"></i> Opciones <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="#" onclick="cargarFrecuencia()">Administrar Frecuencia</a></li>
-                                        <li><a href="#" onclick="cargarActores()">Administrar Tipo Actor</a></li> <!-- Nuevo enlace con onclick -->
+                                        <li><a href="#" onclick="cargarActores()">Administrar Tipo Actor</a></li>
+                                        <li><a href="#" onclick="cargarFuentes()">Administrar Fuentes</a></li>
+                                        <li><a href="#" onclick="cargarRepresenVisual()">Administrar Representacion Visual</a></li>
+                                        <li><a href="#" onclick="cargarSentido()">Administrar Sentidos</a></li>
+                                        <li><a href="#" onclick="cargarUnidadMed()">Administrar Unidad medicion</a></li>
                                         <li><a href="#" onclick="cargarUsuarios()">Administrar usuarios</a></li>
                                     </ul>
                                 </li>
@@ -163,7 +167,7 @@
                 }
             });
         }
-            function cargarActores() {
+         function cargarActores() {
                 $.ajax({
                     url: '/TipoActor_View.aspx',
                     type: 'GET',
@@ -174,7 +178,57 @@
                         console.error(error);
                     }
                 });
-            }
+        }
+        function cargarFuentes() {
+            $.ajax({
+                url: '/Fuente_View.aspx',
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        function cargarRepresenVisual() {
+            $.ajax({
+                url: '/RepresenVisual_View.aspx',
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        function cargarSentido() {
+            $.ajax({
+                url: '/Sentido_View.aspx',
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        function cargarUnidadMed() {
+            $.ajax({
+                url: '/UnidadMedicion_View.aspx',
+                type: 'GET',
+                success: function (data) {
+                    $('#usuario-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
         }
     </script>
 

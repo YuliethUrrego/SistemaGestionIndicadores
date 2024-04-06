@@ -50,7 +50,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Gestion Fuente</h2>
+							<h2>Fuente</h2>
 						</div>
 						<div class="col-sm-6">
 							<a href="#crudModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Gestionar Fuente</span></a>
@@ -97,7 +97,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 							<div class="modal-header">						
-								<h4 class="modal-title">Gestión de Usuarios</h4>
+								<h4 class="modal-title">Gestión Fuente</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">					

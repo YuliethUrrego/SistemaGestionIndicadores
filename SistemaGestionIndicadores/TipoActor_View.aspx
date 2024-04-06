@@ -19,6 +19,7 @@
 
         // Select/Deselect checkboxes
         var checkbox = $('table tbody input[type="checkbox"]');
+        var checkbox = $('table tbody input[type="checkbox"]');
         $("#selectAll").click(function () {
             if (this.checked) {
                 checkbox.each(function () {
@@ -48,7 +49,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Gestion Tipo Actor</h2>
+							<h2>Tipo Actor</h2>
 						</div>
 						<div class="col-sm-6">
 							<a href="#crudModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Gestionar Tipo Actor</span></a>
@@ -95,7 +96,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 							<div class="modal-header">						
-								<h4 class="modal-title">Gestión de Usuarios</h4>
+								<h4 class="modal-title">Gestión Tipo Actor</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">					

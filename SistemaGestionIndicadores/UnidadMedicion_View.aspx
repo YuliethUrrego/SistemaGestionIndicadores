@@ -50,7 +50,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Gestion Unidad Medicion
+							<h2>Unidad Medición
 							</h2>
 						</div>
 						<div class="col-sm-6">
@@ -98,7 +98,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 							<div class="modal-header">						
-								<h4 class="modal-title">Gestión de Usuarios</h4>
+								<h4 class="modal-title">Gestión de Unidad Medición</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">					
